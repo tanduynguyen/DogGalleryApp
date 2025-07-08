@@ -3,6 +3,10 @@ A Flutter-based project with the BLoC pattern and Repository pattern
 
 **“Beginner's Guide to BLoC + Repository Pattern”**
 
+
+https://github.com/user-attachments/assets/e96d4354-7359-4c26-b05d-17b1980386d2
+
+
 **Project structure overview:**
 
 ![screenshot](assets/images/project_structure.png).
