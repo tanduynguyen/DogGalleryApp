@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:dog_gallery_app/bloc/image_bloc.dart';
 import 'package:dog_gallery_app/bloc/image_event.dart';
 import 'package:dog_gallery_app/bloc/image_state.dart';
+import 'package:dog_gallery_app/modules/image_fullscreen.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as developer;
 
@@ -92,15 +93,18 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisSpacing: spacing,
         crossAxisSpacing: spacing,
         controller: scrollController,
-        children:
-            imageUrls.map((String url) {
-              return FadeInImage.assetNetwork(
-                placeholder: placeholder,
-                image: url,
-                fit: BoxFit.cover,
-              );
-            }).toList(),
+        children: imageUrls.map(imageWidget).toList(),
       ),
+    );
+  }
+
+  Widget imageWidget(String url) {
+    return ImageFullScreenWrapperWidget(
+      child: FadeInImage.assetNetwork(
+          placeholder: placeholder,
+          image: url,
+          fit: BoxFit.cover,
+        )
     );
   }
 }
