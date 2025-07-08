@@ -2,7 +2,8 @@
 A Flutter-based project with the BLoC pattern and Repository pattern
 
 **Project structure overview:**
-![screenshot](assets/images/project_structure.png)
+
+![screenshot](assets/images/project_structure.png){:height="200px" width="100px"}.
 
 **Explanation of each component:**
 * Bloc (Business Logic Component): Handles app logic & state transitions in response to user actions (e.g., button press to fetch dog image).
@@ -12,15 +13,21 @@ A Flutter-based project with the BLoC pattern and Repository pattern
 
 **Lifecycle and state flow of BLoC:**
 [User Action]
+
 ↓
-[DogBloc.add(FetchRandomDog)]
+[ImageBloc.add(GetRandomImage)]
+
 ↓
-[on<FetchRandomDog> → Calls UseCase]
+[on<GetRandomImage> → Calls UseCase]
+
 ↓
 [UseCase calls Repository → API request]
+
 ↓
-[Repository returns DogImage]
+[Repository returns ResponseModel]
+
 ↓
-[DogBloc emits DogLoaded]
+[ImageBloc emits ImageLoaded]
+
 ↓
 [UI receives new state and rebuilds]
