@@ -4,23 +4,11 @@ import 'package:dog_gallery_app/presentation/pages/image_gallery_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'data/datasource/image_remote_data_source.dart';
-import 'domain/entities/response_model.dart';
-import 'domain/repositories/image_repository.dart';
+import 'data/repository/image_repository_impl.dart';
 import 'domain/usecases/get_random_image.dart';
 
 void main() {
   runApp(const MyApp());
-}
-
-class ImageRepositoryImpl implements ImageRepository {
-  ImageRepositoryImpl(this.imageRemoteDataSource);
-
-  final ImageRemoteDataSource imageRemoteDataSource;
-
-  @override
-  Future<ResponseModel> getRandomImage() {
-    return imageRemoteDataSource.getRandomImage();
-  }
 }
 
 class MyApp extends StatelessWidget {
